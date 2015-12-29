@@ -1,0 +1,28 @@
+{
+  "name": "quadgod",
+  "description": "",
+  "main": "",
+  "license": "ISC",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "angularjs#~1.4.8",
+    "jquery": "~2.1.4",
+    "font-awesome": "fontawesome#~4.5.0",
+    "bootstrap-sass": "~3.3.6",
+    "angular-ui-router": "~0.2.15"
+  }
+}
