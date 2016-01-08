@@ -6,3 +6,5 @@ Run development mode
 
 Just build once
 ```npm run build```
+
+https://monosnap.com/file/iAaqmhMutuMFvYI8B2imdwSzjrnvuR
