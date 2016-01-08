@@ -1,5 +1,7 @@
 'use strict';
 
+var destStaticFolder = 'public';
+
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	gutil = require('gulp-util'),
@@ -15,22 +17,22 @@ var gulp = require('gulp'),
 
 gulp.task('copy-fontawsome-fonts', function () {
     return gulp.src('bower_components/font-awesome/fonts/**')
-        .pipe(gulp.dest('static/fonts'));
+        .pipe(gulp.dest(destStaticFolder + '/fonts'));
 });
 
 gulp.task('copy-bootstrap-fonts', function () {
     return gulp.src('bower_components/bootstrap-sass/assets/fonts/bootstrap/**')
-        .pipe(gulp.dest('static/fonts/bootstrap'));
+        .pipe(gulp.dest(destStaticFolder + '/fonts/bootstrap'));
 });
 
 gulp.task('copy-controllers-templates', function () {
     return gulp.src('frontend/controllers/tpl/**/*.html')
-        .pipe(gulp.dest('static/tpl/controllers'));
+        .pipe(gulp.dest(destStaticFolder + '/tpl/controllers'));
 });
 
 gulp.task('copy-directives-templates', function () {
     return gulp.src('frontend/controllers/tpl/**/*.html')
-        .pipe(gulp.dest('static/tpl/directives'));
+        .pipe(gulp.dest(destStaticFolder + '/tpl/directives'));
 });
 
 gulp.task('build-css', function () {
@@ -42,7 +44,7 @@ gulp.task('build-css', function () {
         }))
         .pipe(sass())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('static/css'));
+        .pipe(gulp.dest(destStaticFolder + '/css'));
 });
 
 gulp.task('build-js', function () {
@@ -53,12 +55,12 @@ gulp.task('build-js', function () {
             this.emit('end');
         })
         .pipe(source('app.js'))
-        .pipe(gulp.dest('static/js/'));
+        .pipe(gulp.dest(destStaticFolder + '/js/'));
 });
 
 gulp.task('watch',
     [
-        'build-all'
+        'build'
     ],
     function () {
         gulp.watch('frontend/sass/**/*.scss', ['build-css']);
@@ -67,7 +69,7 @@ gulp.task('watch',
         gulp.watch('frontend/**/*.js', ['build-js']);
     });
 
-gulp.task('build-all',
+gulp.task('build',
     [
         'copy-bootstrap-fonts',
         'copy-fontawsome-fonts',

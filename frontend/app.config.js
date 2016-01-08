@@ -6,7 +6,7 @@ module.exports = [
     '$stateProvider',
     '$httpProvider',
     function ($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider) {
-        $locationProvider.html5Mode({ enabled: true, requireBase: false }).hashPrefix('!');
+        $locationProvider.html5Mode({ enabled: false, requireBase: false }).hashPrefix('!');
         var routes = require('./app.routes');
         if (routes) {
             for (var state in routes) {

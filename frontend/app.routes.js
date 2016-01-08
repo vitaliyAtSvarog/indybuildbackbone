@@ -1,6 +1,6 @@
 'use strict';
 
-var controllersTemplates = '/static/tpl/controllers/';
+var controllersTemplates = '/public/tpl/controllers/';
 
 module.exports = {
     'root': {
